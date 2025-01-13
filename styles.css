@@ -1,0 +1,194 @@
+/* Slideshow styles */
+* {
+  box-sizing: border-box;
+}
+
+.slideshow-container {
+  flex: 1;
+  width: 100%;
+  position: relative;
+  height: calc(100vh - 150px);
+  overflow: hidden;
+  background-color: #000;
+}
+
+.mySlides {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  z-index: 1;
+  transition: opacity 2s ease-in-out;
+  pointer-events: none;
+}
+
+.mySlides.visible {
+  opacity: 1;
+  z-index: 2;
+  pointer-events: auto;
+}
+
+.mySlides img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Dot styles */
+.dot-container {
+  text-align: center;
+  padding: 10px 0;
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  z-index: 3;
+}
+
+.dot {
+  height: 10px;
+  width: 10px;
+  margin: 0 4px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.dot.active {
+  background-color: #717171;
+}
+
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body */
+body {
+  font-family: "Orkney", sans-serif;
+  color: #333;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+@font-face {
+  font-family: "Orkney";
+  src: url("./orkney/orkney-regular.woff2") format("woff2"),
+    url("./orkney/orkney-regular.woff") format("woff"),
+    url("./orkney/orkney-regular.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Header */
+header {
+  position: relative;
+  background-color: whitesmoke;
+  color: #ff8c00;
+  padding: 1rem;
+  text-align: left;
+}
+
+header .container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Header Text Group */
+header .text-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+header h1 {
+  font-size: 1.7rem;
+  margin-bottom: 0.2rem;
+}
+
+header h4,
+header h5 {
+  margin: 0;
+  font-weight: 100;
+  font-size: 0.7rem;
+}
+
+/* Navigation */
+header nav {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+header nav a {
+  text-decoration: none;
+  color: #ff8c00;
+  font-size: 1.2rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+header nav a:hover {
+  color: orchid;
+}
+
+/* Image Section */
+.image-container {
+  flex-grow: 1;
+  width: 100%;
+  overflow: visible;
+}
+
+.image-container img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Footer */
+footer {
+  background-color: whitesmoke;
+  color: #ff8c00;
+  text-align: center;
+  padding: 1rem;
+}
+
+footer p {
+  font-size: 1rem;
+  margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  header .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  header h1 {
+    font-size: 2.5rem;
+  }
+
+  header nav {
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 2rem;
+  }
+}
+
+@media only screen and (max-width: 300px) {
+  .text {
+    font-size: 11px;
+  }
+}
